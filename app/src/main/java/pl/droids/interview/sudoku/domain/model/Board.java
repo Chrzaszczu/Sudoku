@@ -1,4 +1,4 @@
-package pl.droids.interview.sudoku.model;
+package pl.droids.interview.sudoku.domain.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

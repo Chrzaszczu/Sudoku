@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Sudoku</string>
+
+    <string name="check_board_button">CHECK</string>
+    <string name="new_board_button">NEW BOARD</string>
 </resources>
