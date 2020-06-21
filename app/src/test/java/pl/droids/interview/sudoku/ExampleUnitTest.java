@@ -14,6 +14,10 @@ public class ExampleUnitTest
     @Test
     public void addition_isCorrect()
     {
+        for (int i = 0; i < 8; i++)
+        {
+            System.out.print(i % 3);
+        }
         assertEquals(4, 2 + 2);
     }
 }

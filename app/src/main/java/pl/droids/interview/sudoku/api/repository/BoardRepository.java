@@ -1,4 +1,4 @@
-package pl.droids.interview.sudoku.repository;
+package pl.droids.interview.sudoku.api.repository;
 
 import pl.droids.interview.sudoku.domain.model.Board;
 import retrofit2.Call;
