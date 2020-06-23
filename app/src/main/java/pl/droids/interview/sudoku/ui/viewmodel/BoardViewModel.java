@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 import pl.droids.interview.sudoku.domain.dto.BoardDto;
 import pl.droids.interview.sudoku.domain.enums.Difficulty;
 import pl.droids.interview.sudoku.domain.model.Tile;
-import pl.droids.interview.sudoku.api.service.BoardService;
+import pl.droids.interview.sudoku.api.client.BoardClient;
 
 public class BoardViewModel extends ViewModel
 {
@@ -44,7 +44,7 @@ public class BoardViewModel extends ViewModel
 
     private void obtainBoard(Difficulty difficulty)
     {
-        BoardService boardService = new BoardService();
-        boardService.loadNewBoard(boardDto, difficulty);
+        BoardClient boardClient = new BoardClient();
+        boardClient.loadNewBoard(boardDto, difficulty);
     }
 }

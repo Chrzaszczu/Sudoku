@@ -1,4 +1,4 @@
-package pl.droids.interview.sudoku;
+package pl.droids.interview.sudoku.ui;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import pl.droids.interview.sudoku.R;
 import pl.droids.interview.sudoku.domain.dto.BoardDto;
 import pl.droids.interview.sudoku.domain.enums.Difficulty;
 import pl.droids.interview.sudoku.game.BoardChecker;
@@ -49,19 +50,23 @@ public class MainActivity extends AppCompatActivity
         checkBoard.setOnClickListener(view ->
         {
             final BoardDto boardDto = boardViewModel.getBoardDto().getValue();
-            BoardChecker boardChecker;
             if(boardDto != null)
             {
-                boardChecker = new BoardChecker(boardDto.getBoard());
-                if (boardChecker.isFinished())
-                {
-                    Toast.makeText(this, "YOU WIN!", Toast.LENGTH_LONG).show();
-                }
-                else
-                {
-                    Toast.makeText(this, "SOMETHING IS WRONG!", Toast.LENGTH_LONG).show();
-                }
+                final BoardChecker boardChecker = new BoardChecker(boardDto.getBoard());
+                showToast(boardChecker.isFinished());
             }
         });
+    }
+
+    private void showToast(boolean isFinished)
+    {
+        if(isFinished)
+        {
+            Toast.makeText(this, "YOU WIN!", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(this, "SOMETHING IS WRONG!", Toast.LENGTH_LONG).show();
+        }
     }
 }

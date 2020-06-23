@@ -1,11 +1,11 @@
-package pl.droids.interview.sudoku.api.service;
+package pl.droids.interview.sudoku.api.client;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
 import pl.droids.interview.sudoku.domain.dto.BoardDto;
 import pl.droids.interview.sudoku.domain.enums.Difficulty;
-import pl.droids.interview.sudoku.domain.mapper.BoardMapper;
+import pl.droids.interview.sudoku.utils.mapper.BoardMapper;
 import pl.droids.interview.sudoku.domain.model.Board;
 import pl.droids.interview.sudoku.api.repository.BoardRepository;
 import retrofit2.Call;
@@ -14,7 +14,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class BoardService
+public class BoardClient
 {
     private static final String BOARD_QUERY = "https://sugoku.herokuapp.com/";
 

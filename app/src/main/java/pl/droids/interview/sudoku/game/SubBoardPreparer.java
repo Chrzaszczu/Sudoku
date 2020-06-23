@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import pl.droids.interview.sudoku.domain.model.Tile;
+import pl.droids.interview.sudoku.utils.IndexConverter;
 
 public class SubBoardPreparer
 {
@@ -25,19 +26,14 @@ public class SubBoardPreparer
         int index = 0;
         for(Tile tile: board)
         {
-            subBoards.get(convertToSubBoardIndex(index)).add(tile);
+            subBoards.get(
+                    IndexConverter
+                    .listIndexToSubBoardIndex(index, BOARD_DIMENSION, SUB_BOARD_DIMENSION))
+                    .add(tile);
             index++;
         }
 
         return subBoards;
-    }
-
-    private int convertToSubBoardIndex(int index)
-    {
-        int row = (index % BOARD_DIMENSION) / SUB_BOARD_DIMENSION;
-        int column = (index / BOARD_DIMENSION) / SUB_BOARD_DIMENSION;
-
-        return row * SUB_BOARD_DIMENSION  + column;
     }
 
     private void initializeSubBoards()

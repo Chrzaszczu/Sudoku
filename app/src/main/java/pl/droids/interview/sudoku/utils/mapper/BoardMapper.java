@@ -1,4 +1,4 @@
-package pl.droids.interview.sudoku.domain.mapper;
+package pl.droids.interview.sudoku.utils.mapper;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -18,7 +18,7 @@ public abstract class BoardMapper
         return new BoardDto(tiles);
     }
 
-    public synchronized static List<Integer> toList(List<List<Integer>> list2D)
+    public static List<Integer> toList(List<List<Integer>> list2D)
     {
         List<Integer> list = new LinkedList<>();
 
@@ -30,7 +30,7 @@ public abstract class BoardMapper
         return list;
     }
 
-    public synchronized static List<List<Integer>> toList2D(List<Integer> list, int dimension)
+    public static List<List<Integer>> toList2D(List<Integer> list, int dimension)
     {
         List<List<Integer>> list2D = new LinkedList<>();
         initializeList2D(list2D, dimension);
