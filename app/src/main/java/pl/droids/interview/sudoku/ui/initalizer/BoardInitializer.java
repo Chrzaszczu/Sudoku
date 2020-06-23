@@ -13,7 +13,7 @@ import pl.droids.interview.sudoku.ui.viewmodel.BoardViewModel;
 
 public class BoardInitializer
 {
-    private static final int DEFAULT_BOARD_COUNT = 9;
+    private static final int BOARD_DIMENSION = 9;
 
     private EditTextInitializer editTextInitializer;
     private BoardViewModel boardViewModel;
@@ -44,8 +44,8 @@ public class BoardInitializer
 
     private void setBoardSize()
     {
-        gridLayout.setColumnCount(DEFAULT_BOARD_COUNT);
-        gridLayout.setRowCount(DEFAULT_BOARD_COUNT);
+        gridLayout.setColumnCount(BOARD_DIMENSION);
+        gridLayout.setRowCount(BOARD_DIMENSION);
     }
 
     private EditText createEditText(Context context, Tile tile, int tileIndex)
